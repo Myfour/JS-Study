@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS测试模板</title>
+</head>
+
+<body>
+    <script>
+        // new Date（）获取的当前时间是你计算机的本机时间，这个时间用户可以自设
+        var now = new Date();
+        console.log(now); // Wed Dec 22 2021 15:05:17 GMT+0800 (中国标准时间)
+        // 通过给Date传参自定义一个时间的对象，这里月份1-12对应的索引为0-11
+        let a = new Date(2021, 11, 22, 14, 42)
+        console.log(a); // Wed Dec 22 2021 14:42:00 GMT+0800 (中国标准时间)
+        // 通过传入标准的日期时间表示的字符串，转换为时间戳之后再传给Date（）就可得到时间
+        let b = Date.parse('2021-12-12T01:01')
+        console.log(b); // 1639242060000
+        b = new Date(b);
+        console.log(b); // Sun Dec 12 2021 01:01:00 GMT+0800 (中国标准时间)
+        // 对于Date对象可以使用一些方法获取年 月 日 等信息，其中获取月份得到的数是0-11的索引
+        let month = b.getMonth()
+        console.log(month); // 11
+        // 关于时区的影响,对于date对象使用toUTCString()可以获取统一的UTC时间
+        // 对date对象使用toLocaleString（）根据所在时区获取本地时间
+        b = new Date(Date.parse('2021-12-22T15:04'))
+        let utcdate = b.toUTCString();
+        console.log(utcdate); // Wed, 22 Dec 2021 07:04:00 GMT
+        let localdate = b.toLocaleString();
+        console.log(localdate); // 2021/12/22 下午3:04:00
+    </script>
+</body>
+
+</html>

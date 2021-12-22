@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS测试模板</title>
+</head>
+
+<body>
+    <script>
+        // 直接在两个/ /之间定义正则表达式
+        let re1 = /\d{3}\-\d{3,8}$/;
+        // 使用这个正则表达式字符串的test方法来判断某个字符串是否符合
+        console.log(re1.test('010-12344'));  // true
+        console.log(re1.test('010-123442312')); // false
+        // 切分字符串
+        console.log('a b c    d  e'.split(' ')); // ['a', 'b', 'c', '', '', '', 'd', '', 'e']
+        // 上面无法识别多个空格
+        console.log('a b c    d  e'.split(/\s+/)); // ['a', 'b', 'c', 'd', 'e']
+        // 正则表达式中加入()来分组取
+        let re2 = /(\d{3})\-(\d{3,8})$/;
+        console.log(re2.exec('010-24123')); // ['010-24123', '010', '24123', index: 0, input: '010-24123', groups: undefined]
+
+    </script>
+</body>
+
+</html>

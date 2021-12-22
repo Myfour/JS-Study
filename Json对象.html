@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS测试模板</title>
+</head>
+
+<body>
+    <script>
+        var xiaoming = {
+            name: '小明',
+            age: 14,
+            gender: true,
+            height: 1.65,
+            grade: null,
+            'middle-school': '\"W3C\" Middle School',
+            skills: ['JavaScript', 'Java', 'Python', 'Lisp']
+        };
+        // 使用JSON类的stringify方法可以把JS的对象序列化为JSON格式
+        let a = JSON.stringify(xiaoming)
+        console.log(a)
+        // JSON.parse将json转换为js的对象
+        let b = JSON.parse(a)
+        console.log(b)
+    </script>
+</body>
+
+</html>
