@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS测试模板</title>
+</head>
+
+<body>
+    <script>
+        console.log('Go')
+        let xhr = new XMLHttpRequest();
+        console.log(xhr)
+        xhr.open('get', 'https://api.muxiaoguo.cn/api/163reping', false)
+        xhr.send(null)
+        alert(JSON.parse(xhr.response)['data']['content'])
+    </script>
+</body>
+
+</html>
